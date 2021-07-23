@@ -408,10 +408,10 @@ namespace AzureStorageNew
                 {
                     status = await destBlobClient.StartCopyFromUriAsync(sourceSasBlobUri);
                     Console.WriteLine("status");
-                    //if (!status.HasCompleted)
-                    //{
-                    //    Console.WriteLine("Blob " + blob.Name + " failed to copy over");
-                    //}
+                    if (!status.HasCompleted)
+                    {
+                        Console.WriteLine("Blob " + blob.Name + " failed to copy over");
+                    }
                 }
                 catch (RequestFailedException ex)
                 {
